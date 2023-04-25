@@ -1,4 +1,4 @@
-window.addEventListener("load", () => {
+window.addEventListener("load", function () {
   const lis = document.querySelectorAll('.gnb>ul>li')
   const header = document.querySelector(".header_wrap");
 
