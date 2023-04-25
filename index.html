@@ -34,7 +34,7 @@
       <h2 class="blind">메인 배너</h2>
       <ul class="slide_wrap">
         <li class="slide active">
-          <video autoplay loop poster muted="images/main_video_thum1.jpg">
+          <video autoplay loop poster="images/main_video_thum1.jpg" muted>
             <source src="video/main_video.mp4" type="video/mp4" />
           </video>
           <p>
@@ -56,7 +56,7 @@
             <li>
               <a href="#">
                 <div class="news_image">
-                  <img src="images/imageView (1).png" alt="4월 뉴스레터 발행">
+                  <img src="images/imageView(1).png" alt="4월 뉴스레터 발행">
                 </div>
                 <div class="news_text">
                   <div class="top_text">
@@ -141,9 +141,9 @@
         <h2>제품정보</h2>
         <div class="content2_inner">
           <div class="product_srch">
-            <form action="">
-              <legend class="blind">파트넘버 검색</legend>
-              <label class="blind" for="srch">파트넘버</label>
+            <form action="post">
+              <legend>파트넘버 검색</legend>
+              <label class="blind" for="product_srch">파트넘버</label>
               <input type="search" id="product_srch" placeholder="파트 넘버를 입력해주세요.">
               <button></button>
             </form>
@@ -326,21 +326,21 @@
     <!-- //footer -->
     <!-- //wrap -->
     <hr />
-
-    <script>
-      //AJAX의 최신 Fetch API 사용해서
-      //html 문서안에서 다른 html문서불러오기
-      //자바스크립트 비동기방식으로 async await
-      async function fetchHtmlAsText(url) {
-        const response = await fetch(url);
-        return await response.text();
-      }
-      async function importPage(target) {
-        document.querySelector('#' + target).innerHTML = await fetchHtmlAsText(target + '.html')
-      }
-      importPage('header');
-      importPage('footer');
-    </script>
+  </div>
+  <script>
+    //AJAX의 최신 Fetch API 사용해서
+    //html 문서안에서 다른 html문서불러오기
+    //자바스크립트 비동기방식으로 async await
+    async function fetchHtmlAsText(url) {
+      const response = await fetch(url);
+      return await response.text();
+    }
+    async function importPage(target) {
+      document.querySelector('#' + target).innerHTML = await fetchHtmlAsText(target + '.html')
+    }
+    importPage('header');
+    importPage('footer');
+  </script>
 
 
 </body>
